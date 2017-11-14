@@ -2,15 +2,21 @@
 #include"Screen.h"
 #include"FPS.h"
 #include"Game.h"
+#include"Ball.h"
+#include"Effect.h"
 
 #include"Player.h"
 void main()
-{
-	Player player;
+{	
 	Screen screen;
+	Player player(screen);
 	FPS fps(screen);
-	Game game(player, screen, fps);
+	GoalPost goalPost(screen);
+	Ball ball(player ,goalPost ,screen);
+	Effect effect(screen);
+	Game game(player, ball,goalPost, effect, screen, fps);
 
+	//√ ±‚»≠
 	screen.Init();
 	game.Init();
 

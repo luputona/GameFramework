@@ -30,7 +30,7 @@ void Screen::Init()
 void Screen::Flipping()
 {
 	SetConsoleActiveScreenBuffer(g_hScreen[g_nScreenIndex]);
-	g_nScreenIndex = !g_nScreenIndex;
+	g_nScreenIndex = !g_nScreenIndex;  //0 ,1 반복교체
 }
 void Screen::Clear()
 {

@@ -1,5 +1,9 @@
 #pragma once
+#include"Screen.h"
+#include<cstdio>
 #include<cstring>
+#include<conio.h>
+
 struct Position
 {
 	int x, y;
@@ -14,10 +18,12 @@ struct PlayerData
 class Player
 {
 public:
-	Player();
+	Player(Screen &screen);
 	~Player();
 
 public:
+	void Init();
+	void Draw();
 	void SetPosition(int x, int y);
 	void SetCenterPosition(int x, int y);
 	void SetPlayerString(char *str);
@@ -29,5 +35,6 @@ public:
 
 private:
 	PlayerData playerData;
+	Screen &screen;
 };
 
