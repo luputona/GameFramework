@@ -33,7 +33,7 @@ void Effect::Draw()
 {
 	if (GetIsGoal() == true)
 	{
-		Message(10, 50);
+		Message(8, 13);
 	}
 }
 void Effect::Release()
@@ -42,10 +42,15 @@ void Effect::Release()
 }
 void Effect::Message(int x, int y)
 {
-	screen.Print(x, y, "\n¡Ù )) °ñÀÎ (( ¡Ú\n");
+	screen.Print(x, y + 0, "¡Ù )) °ñÀÎ (( ¡Ú\n");
 	screen.Print(x, y + 1, "¡¬(^^)£¯¡¬(^^)£¯\n");
 	screen.Print(x, y + 2, "   ¡á      ¡á\n");
 	screen.Print(x, y + 3, "   ¦¥¦¤   ¦£¦¦\n");
+}
+
+void Effect::FailScreen()
+{
+	//screen.Print();
 }
 
 void Effect::SetStartTime(clock_t time)

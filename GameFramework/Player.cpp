@@ -42,7 +42,7 @@ void Player::Draw()
 
 	//좌표 출력
 	sprintf(str, "주인공 이동 좌표 : %d, %d", GetPosition().x, GetPosition().y);
-	screen.Print(0, 3, str);
+	screen.Print(0, 2, str);
 }
 
 void Player::SetPosition(int x, int y)
@@ -65,7 +65,6 @@ void Player::SetPlayerString(char *str)
 	playerData.nLength = strlen(str);
 	playerData.strPlayer = new char[playerData.nLength + 1];
 	strcpy(playerData.strPlayer, str);
-
 }
 Position &Player::GetPosition()
 {

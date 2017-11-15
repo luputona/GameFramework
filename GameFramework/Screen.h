@@ -14,6 +14,5 @@ public:
 	void Release();		//화면 버퍼 해제
 	void Print(int x, int y, char *str);	//화면 출력
 	void SetColor(unsigned short color);	//색상 설정
-	
 };
 

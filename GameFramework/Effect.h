@@ -20,12 +20,14 @@ public:
 	void Draw();
 	void Release();
 	void Message(int x, int y);
+	void FailScreen();
 	void SetStartTime(clock_t time);
 	void SetStayTime(clock_t time);
 	void SetIsGoal(bool goal);
 	clock_t GetStartTime();
 	clock_t GetStayTime();
 	bool GetIsGoal();
+	
 
 private:
 	EffData effData;

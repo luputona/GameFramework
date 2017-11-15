@@ -12,8 +12,8 @@ void main()
 	Player player(screen);
 	FPS fps(screen);
 	GoalPost goalPost(screen);
-	Ball ball(player ,goalPost ,screen);
-	Effect effect(screen);
+	Effect effect(screen);	
+	Ball ball(player ,goalPost,effect ,screen);
 	Game game(player, ball,goalPost, effect, screen, fps);
 
 	//√ ±‚»≠

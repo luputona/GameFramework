@@ -1,5 +1,5 @@
 #include "GoalPost.h"
-
+#include"Game.h"
 
 
 GoalPost::GoalPost(Screen &screen): screen(screen)
@@ -12,13 +12,13 @@ GoalPost::~GoalPost()
 {
 }
 
-void GoalPost::Init()
+void GoalPost::Init(StageInfo &info)
 {
-	SetPosition(20, 5);	//초기 위치값
-	SetLength(1);		//골대의 기본 길이 , 1
-	SetMoveTime(100);	//100ms단ㅇ위로 움직이도록 설정
+	SetPosition(info.nGoalPostX, info.nGoalPostY);	//초기 위치값
+	SetLength(info.nGoalPostLen);					//골대의 기본 길이 , 1
+	SetMoveTime(info.moveTime);						//100ms단ㅇ위로 움직이도록 설정
 	SetOldTime(clock());//
-	SetDistance(1);		//골대가 100ms 마다 움직이는 거리, 1 
+	SetDistance(info.nDist);						//골대가 100ms 마다 움직이는 거리, 1 
 
 	int nLen = GetLength() * 2 + 1;
 

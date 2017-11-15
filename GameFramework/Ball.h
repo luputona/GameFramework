@@ -1,7 +1,9 @@
 #pragma once
 #include"Player.h"
 #include"Screen.h"
+#include"Effect.h"
 #include"GoalPost.h"
+
 #include<ctime>
 struct BallData
 {
@@ -11,16 +13,16 @@ struct BallData
 	clock_t oldTime;
 	int count;
 };
-
+struct StageInfo;
 class Ball
 {
 
 public:
-	Ball(Player &player, GoalPost &goalPost, Screen &screen);
+	Ball(Player &player, GoalPost &goalPost,Effect &effect, Screen &screen);
 	~Ball();
 
 public:
-	void Init();
+	void Init(StageInfo &info);
 	void Draw();
 	void Reset();
 	void Update(clock_t CurTime);
@@ -35,10 +37,16 @@ public:
 	Position &GetPosition();
 	int GetCount();
 
+	void SetMinusCount(int count);
+	int GetMinusCount();
+
 private:
 	BallData ballData;
 	Player &player;
 	Screen &screen;
 	GoalPost &goalPost;
+	Effect &effect;
+	int m_count;
+	
 };
 

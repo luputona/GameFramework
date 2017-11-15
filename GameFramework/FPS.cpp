@@ -1,9 +1,6 @@
 #pragma warning(disable : 4996)
 #include "FPS.h"
 
-
-
-
 FPS::FPS(Screen &screen) : screen(screen)
 {
 }
@@ -23,7 +20,6 @@ void FPS::Draw()
 {
 	fpsData.frameCnt++;
 	fpsData.fpsCurTime = clock();
-
 
 	if (fpsData.fpsCurTime - fpsData.fpsOldTime > 1000)
 	{

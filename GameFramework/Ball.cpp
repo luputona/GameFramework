@@ -2,9 +2,7 @@
 #pragma warning(disable : 4996)
 #include "Ball.h"
 
-
-
-Ball::Ball(Player &player, GoalPost &goalPost , Screen &screen) : player(player) ,goalPost(goalPost) ,screen(screen)
+Ball::Ball(Player &player, GoalPost &goalPost , Effect &effect , Screen &screen ) : player(player) ,goalPost(goalPost),effect(effect) ,screen(screen)
 {
 }
 
@@ -13,13 +11,14 @@ Ball::~Ball()
 {
 
 }
-void Ball::Init()
+void Ball::Init(StageInfo &info)
 {
 	//볼 초기화
 	SetIsReady(true);
 	SetPosition(player.GetPosition().x , player.GetPosition().y - 1);
 	SetMoveTime(50);
 	SetCount(0);
+	
 }
 void Ball::Draw()
 {
@@ -73,7 +72,12 @@ void Ball::Update(clock_t CurTime)
 		if (GetPosition().y <= goalPost.GetPosition().y)
 		{ 
 			Reset();
+			//득점 처리
 			SetCount(GetCount() + 1);
+			SetMinusCount(GetMinusCount() - 1);
+			//축하 메세지 출력
+			effect.SetIsGoal(true);
+			effect.SetStartTime(clock());
 		}
 	}
 
@@ -89,8 +93,7 @@ void Ball::Update(clock_t CurTime)
 		if (GetPosition().y <= goalPost.GetPosition().y)
 		{
 			Reset();
-			//득점 처리
-			
+
 		}
 	}
 }
@@ -120,6 +123,16 @@ void Ball::SetCount(int count)
 int Ball::GetCount()
 {
 	return ballData.count;
+}
+
+void Ball::SetMinusCount(int count)
+{
+	m_count = count;
+}
+
+int Ball::GetMinusCount()
+{
+	return m_count;
 }
 
 bool Ball::GetIsReady()
