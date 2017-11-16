@@ -70,16 +70,12 @@ Position &Player::GetPosition()
 {
 	return playerData.pos;
 }
-char *Player::SetPlayerString()
+char *Player::GetPlayerString()
 {
 	return playerData.strPlayer;
 }
 int Player::GetStrLen()
 {
 	return playerData.nLength;
-}
-char *Player::GetPlayerString()
-{
-	return playerData.strPlayer;
 }
 

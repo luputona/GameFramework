@@ -234,9 +234,9 @@ void Game::KeyProcess(int key)			//키 프로그레스
 		}
 		player.SetPosition(--player.GetPosition().x, player.GetPosition().y);
 
-		if ((player.GetPosition().x - player.GetCenterPos().x) < 0 ||
-			player.GetPosition().x + ((player.GetCenterPos().x * 2 ) + 1) > GAME_MAX_WIDTH)
+		if ((player.GetPosition().x - player.GetCenterPos().x) < 0 || player.GetPosition().x + ((player.GetCenterPos().x * 2 ) + 1) > GAME_MAX_WIDTH)
 		{
+			
 			player.SetPosition(--player.GetPosition().x, player.GetPosition().y);
 		}
 		break;

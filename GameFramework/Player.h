@@ -29,7 +29,7 @@ public:
 	void SetPlayerString(char *str);
 	Position &GetPosition();
 	Position &GetCenterPos();
-	char *SetPlayerString();
+	
 	int GetStrLen();
 	char *GetPlayerString();
 
